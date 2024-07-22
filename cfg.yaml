@@ -1,0 +1,16 @@
+# Check https://pkg.go.dev/github.com/oapi-codegen/oapi-codegen/v2/pkg/codegen#OutputOptions
+# for a list of all the options one may configure
+
+# Name of the package to generate code into
+package: goslurm
+
+# Output Go file (i.e. the file with the type and client definitions)
+output: client_gen.go
+
+# Let's choose what to generate...
+generate:
+  # We'll want to define the types used by the API!
+  models: true
+
+  # And... the client logic would be nice too!
+  client: true
