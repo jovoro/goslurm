@@ -2,6 +2,10 @@ package goslurm
 
 import "net/http"
 
+type Response interface {
+	StatusCode() int
+}
+
 func GenClient(server, user, token string, hc *http.Client) (*Client, error) {
 	 return NewClient(server, WithHTTPClient(hc), WithRequestEditorFn(genAuthHeaders(user, token)))
 }
