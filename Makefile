@@ -8,6 +8,11 @@ all: client_gen.go
 client_gen.go: api.yaml cfg.yaml generate.go
 	$(CC) generate
 
+oapi-gen:
+	@openapi-generator generate -g go -o oapigen -i api.yaml \
+		--git-host github.com --git-user-id pcolladosoto --git-repo-id goslurm/oapigen \
+		-c cfg.json
+
 .PHONY: clean
 
 clean:
