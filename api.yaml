@@ -1815,6 +1815,7 @@
           },
           "profile": {
             "type": "array",
+            "format": "int64",
             "description": "Job profiling requested",
             "items": {
               "type": "string"

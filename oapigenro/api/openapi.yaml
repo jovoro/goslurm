@@ -391,8 +391,6 @@ paths:
       summary: Retrieve OpenAPI Specification
       tags:
       - openapi
-    servers:
-    - url: /
   /openapi.json:
     get:
       responses:
@@ -401,8 +399,6 @@ paths:
       summary: Retrieve OpenAPI Specification
       tags:
       - openapi
-    servers:
-    - url: /
   /openapi:
     get:
       responses:
@@ -411,8 +407,6 @@ paths:
       summary: Retrieve OpenAPI Specification
       tags:
       - openapi
-    servers:
-    - url: /
   /openapi/v3:
     get:
       responses:
@@ -421,8 +415,6 @@ paths:
       summary: Retrieve OpenAPI Specification
       tags:
       - openapi
-    servers:
-    - url: /
 components:
   schemas:
     v0.0.38_diag:
@@ -1754,6 +1746,7 @@ components:
           type: integer
         priority:
           description: relative priority of the job
+          format: int64
           type: integer
         profile:
           description: Job profiling requested

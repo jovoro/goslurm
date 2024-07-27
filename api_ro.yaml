@@ -580,12 +580,7 @@
             "description": "OpenAPI Specification"
           }
         }
-      },
-      "servers": [
-        {
-          "url": "\/"
-        }
-      ]
+      }
     },
     "\/openapi.json": {
       "get": {
@@ -598,12 +593,7 @@
             "description": "OpenAPI Specification"
           }
         }
-      },
-      "servers": [
-        {
-          "url": "\/"
-        }
-      ]
+      }
     },
     "\/openapi": {
       "get": {
@@ -616,12 +606,7 @@
             "description": "OpenAPI Specification"
           }
         }
-      },
-      "servers": [
-        {
-          "url": "\/"
-        }
-      ]
+      }
     },
     "\/openapi\/v3": {
       "get": {
@@ -634,12 +619,7 @@
             "description": "OpenAPI Specification"
           }
         }
-      },
-      "servers": [
-        {
-          "url": "\/"
-        }
-      ]
+      }
     }
   },
   "components": {
@@ -1601,6 +1581,7 @@
           },
           "priority": {
             "type": "integer",
+            "format": "int64",
             "description": "relative priority of the job"
           },
           "profile": {
