@@ -75,7 +75,7 @@ Name | Type | Description | Notes
 **MinimumTmpDiskPerNode** | Pointer to **int32** | minimum tmp disk per node | [optional] 
 **PreemptTime** | Pointer to **int64** | preemption signal time | [optional] 
 **PreSusTime** | Pointer to **int64** | time job ran prior to last suspend | [optional] 
-**Priority** | Pointer to **int32** | relative priority of the job | [optional] 
+**Priority** | Pointer to **int64** | relative priority of the job | [optional] 
 **Profile** | Pointer to **[]string** | Job profiling requested | [optional] 
 **Qos** | Pointer to **string** | Quality of Service | [optional] 
 **Reboot** | Pointer to **bool** | node reboot requested before start | [optional] 
@@ -1909,20 +1909,20 @@ HasPreSusTime returns a boolean if a field has been set.
 
 ### GetPriority
 
-`func (o *V0038JobResponseProperties) GetPriority() int32`
+`func (o *V0038JobResponseProperties) GetPriority() int64`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *V0038JobResponseProperties) GetPriorityOk() (*int32, bool)`
+`func (o *V0038JobResponseProperties) GetPriorityOk() (*int64, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *V0038JobResponseProperties) SetPriority(v int32)`
+`func (o *V0038JobResponseProperties) SetPriority(v int64)`
 
 SetPriority sets Priority field to given value.
 
