@@ -11,22 +11,47 @@ package oapigen
 
 import (
 	"context"
+	"os"
+	"testing"
+
+	oapigen "github.com/pcolladosoto/goslurm/oapigenro"
+	openapiclient "github.com/pcolladosoto/goslurm/oapigenro"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/pcolladosoto/goslurm/oapigenro"
 )
 
 func Test_oapigen_OpenapiAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
+	configuration.Host = "arc.ft.uam.es:6820"
+	configuration.Scheme = "http"
+
+	envUser, ok := os.LookupEnv("SLURM_USER")
+	if !ok {
+		t.Fatalf("couldn't find user on SLURM_USER")
+	}
+
+	envToken, ok := os.LookupEnv("SLURM_JWT")
+	if !ok {
+		t.Fatalf("couldn't find token on SLURM_JWT")
+	}
+
+	auth := context.WithValue(
+		context.Background(),
+		oapigen.ContextAPIKeys,
+		map[string]oapigen.APIKey{
+			"user":  {Key: envUser},
+			"token": {Key: envToken},
+		},
+	)
+
 	apiClient := openapiclient.NewAPIClient(configuration)
 
 	t.Run("Test OpenapiAPIService OpenapiGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		// t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.OpenapiAPI.OpenapiGet(context.Background()).Execute()
+		httpRes, err := apiClient.OpenapiAPI.OpenapiGet(auth).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -35,9 +60,9 @@ func Test_oapigen_OpenapiAPIService(t *testing.T) {
 
 	t.Run("Test OpenapiAPIService OpenapiJsonGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		// t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.OpenapiAPI.OpenapiJsonGet(context.Background()).Execute()
+		httpRes, err := apiClient.OpenapiAPI.OpenapiJsonGet(auth).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -46,9 +71,9 @@ func Test_oapigen_OpenapiAPIService(t *testing.T) {
 
 	t.Run("Test OpenapiAPIService OpenapiV3Get", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		// t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.OpenapiAPI.OpenapiV3Get(context.Background()).Execute()
+		httpRes, err := apiClient.OpenapiAPI.OpenapiV3Get(auth).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -57,9 +82,9 @@ func Test_oapigen_OpenapiAPIService(t *testing.T) {
 
 	t.Run("Test OpenapiAPIService OpenapiYamlGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		// t.Skip("skip test") // remove to run test
 
-		httpRes, err := apiClient.OpenapiAPI.OpenapiYamlGet(context.Background()).Execute()
+		httpRes, err := apiClient.OpenapiAPI.OpenapiYamlGet(auth).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
