@@ -14,8 +14,7 @@ import (
 	"os"
 	"testing"
 
-	oapigen "github.com/pcolladosoto/goslurm/oapigenro"
-	openapiclient "github.com/pcolladosoto/goslurm/oapigenro"
+	openapiclient "github.com/pcolladosoto/goslurm/v0038"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -38,8 +37,8 @@ func Test_oapigen_OpenapiAPIService(t *testing.T) {
 
 	auth := context.WithValue(
 		context.Background(),
-		oapigen.ContextAPIKeys,
-		map[string]oapigen.APIKey{
+		openapiclient.ContextAPIKeys,
+		map[string]openapiclient.APIKey{
 			"user":  {Key: envUser},
 			"token": {Key: envToken},
 		},
