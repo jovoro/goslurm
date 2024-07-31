@@ -37,10 +37,10 @@ Configuring the token-based authentication and generating the tokens themselves 
 
 ### Authentication for running the tests
 In order to avoid including the authentication information in the repository, the tests read both the token and username from the `SLURM_USER` and
-`SLURM_TOKEN` environment variables respectively. If any of them isn't defined the tests will fail with an informative message. As always, you
+`SLURM_JWT` environment variables respectively. If any of them isn't defined the tests will fail with an informative message. As always, you
 can either define them for the entire shell session with `export SLURM_USER=foo` or you can just define them when invoking `go test` with:
 
-    $ SLURM_USER=foo SLURM_TOKEN=topSecret go test
+    $ SLURM_USER=foo SLURM_JWT=topSecret go test
 
 Remember the `go test` command should be invoked from the `v0038/test` directory!
 
