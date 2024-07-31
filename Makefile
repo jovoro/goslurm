@@ -1,9 +1,9 @@
 CC := go
 
 oapi-gen-ro:
-	@openapi-generator generate -g go -o v0038 -i api_ro.yaml \
+	@openapi-generator generate -g go -o v0038-f -i api_ro.yaml \
 		--git-host github.com --git-user-id pcolladosoto --git-repo-id goslurm/v0038 \
-		-c cfg.json
+		--additional-properties=packageName=v0038,withGoMod=false
 
 .PHONY: clean
 
