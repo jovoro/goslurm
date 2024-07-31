@@ -103,6 +103,7 @@ Class | Method | HTTP request | Description
  - [V0038DiagRpcu](docs/V0038DiagRpcu.md)
  - [V0038DiagStatistics](docs/V0038DiagStatistics.md)
  - [V0038Error](docs/V0038Error.md)
+ - [V0038Errors](docs/V0038Errors.md)
  - [V0038JobProperties](docs/V0038JobProperties.md)
  - [V0038JobResources](docs/V0038JobResources.md)
  - [V0038JobResponseProperties](docs/V0038JobResponseProperties.md)

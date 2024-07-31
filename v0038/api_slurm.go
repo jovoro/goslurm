@@ -134,7 +134,7 @@ func (a *SlurmAPIService) SlurmV0038DiagExecute(r ApiSlurmV0038DiagRequest) (*V0
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v []V0038Error
+			var v V0038Errors
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -406,7 +406,7 @@ func (a *SlurmAPIService) SlurmV0038GetJobsExecute(r ApiSlurmV0038GetJobsRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v []V0038Error
+			var v V0038Errors
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -543,7 +543,7 @@ func (a *SlurmAPIService) SlurmV0038GetNodeExecute(r ApiSlurmV0038GetNodeRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v []V0038Error
+			var v V0038Errors
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -686,7 +686,7 @@ func (a *SlurmAPIService) SlurmV0038GetNodesExecute(r ApiSlurmV0038GetNodesReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v []V0038Error
+			var v V0038Errors
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -833,7 +833,7 @@ func (a *SlurmAPIService) SlurmV0038GetPartitionExecute(r ApiSlurmV0038GetPartit
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v []V0038Error
+			var v V0038Errors
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -976,7 +976,7 @@ func (a *SlurmAPIService) SlurmV0038GetPartitionsExecute(r ApiSlurmV0038GetParti
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v []V0038Error
+			var v V0038Errors
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1123,7 +1123,7 @@ func (a *SlurmAPIService) SlurmV0038GetReservationExecute(r ApiSlurmV0038GetRese
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v []V0038Error
+			var v V0038Errors
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1266,7 +1266,7 @@ func (a *SlurmAPIService) SlurmV0038GetReservationsExecute(r ApiSlurmV0038GetRes
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v []V0038Error
+			var v V0038Errors
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1399,7 +1399,7 @@ func (a *SlurmAPIService) SlurmV0038PingExecute(r ApiSlurmV0038PingRequest) (*V0
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-			var v []V0038Error
+			var v V0038Errors
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

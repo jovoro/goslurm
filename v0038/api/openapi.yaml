@@ -430,9 +430,13 @@ components:
             name: name
             type: type
         errors:
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
         statistics:
           schedule_cycle_per_minute: 4
@@ -573,9 +577,13 @@ components:
           Free: 1
           Reserved: 5
         errors:
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
       properties:
         errors:
@@ -639,9 +647,13 @@ components:
           ping: UP
           status: 0
         errors:
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
       properties:
         meta:
@@ -902,9 +914,13 @@ components:
             name: name
             type: type
         errors:
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
       properties:
         meta:
@@ -1063,9 +1079,13 @@ components:
             name: name
             type: type
         errors:
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
       properties:
         meta:
@@ -1082,12 +1102,39 @@ components:
           type: array
       type: object
     v0.0.38_errors:
-      description: Slurm errors
-      items:
-        $ref: '#/components/schemas/v0.0.38_error'
-      type: array
+      example:
+        meta:
+          Slurm:
+            release: release
+            version:
+              major: 0
+              minor: 1
+              micro: 6
+          plugin:
+            name: name
+            type: type
+        errors:
+        - description: description
+          source: source
+          error: error
+          error_number: 5
+        - description: description
+          source: source
+          error: error
+          error_number: 5
+      properties:
+        meta:
+          $ref: '#/components/schemas/v0.0.38_meta'
+        errors:
+          description: slurm errors
+          items:
+            $ref: '#/components/schemas/v0.0.38_error'
+          type: array
+      type: object
     v0.0.38_error:
       example:
+        description: description
+        source: source
         error: error
         error_number: 5
       properties:
@@ -1097,6 +1144,12 @@ components:
         error_number:
           description: Slurm internal error number
           type: integer
+        description:
+          description: error description
+          type: string
+        source:
+          description: error source
+          type: string
       type: object
     v0.0.38_jobs_response:
       example:
@@ -1372,9 +1425,13 @@ components:
           comment: comment
           account: account
         errors:
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
       properties:
         meta:
@@ -2505,9 +2562,13 @@ components:
             name: name
             type: type
         errors:
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
-        - error: error
+        - description: description
+          source: source
+          error: error
           error_number: 5
       properties:
         meta:

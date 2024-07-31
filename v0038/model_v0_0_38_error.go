@@ -24,6 +24,10 @@ type V0038Error struct {
 	Error *string `json:"error,omitempty"`
 	// Slurm internal error number
 	ErrorNumber *int32 `json:"error_number,omitempty"`
+	// error description
+	Description *string `json:"description,omitempty"`
+	// error source
+	Source *string `json:"source,omitempty"`
 }
 
 // NewV0038Error instantiates a new V0038Error object
@@ -107,6 +111,70 @@ func (o *V0038Error) SetErrorNumber(v int32) {
 	o.ErrorNumber = &v
 }
 
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *V0038Error) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *V0038Error) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *V0038Error) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *V0038Error) SetDescription(v string) {
+	o.Description = &v
+}
+
+// GetSource returns the Source field value if set, zero value otherwise.
+func (o *V0038Error) GetSource() string {
+	if o == nil || IsNil(o.Source) {
+		var ret string
+		return ret
+	}
+	return *o.Source
+}
+
+// GetSourceOk returns a tuple with the Source field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *V0038Error) GetSourceOk() (*string, bool) {
+	if o == nil || IsNil(o.Source) {
+		return nil, false
+	}
+	return o.Source, true
+}
+
+// HasSource returns a boolean if a field has been set.
+func (o *V0038Error) HasSource() bool {
+	if o != nil && !IsNil(o.Source) {
+		return true
+	}
+
+	return false
+}
+
+// SetSource gets a reference to the given string and assigns it to the Source field.
+func (o *V0038Error) SetSource(v string) {
+	o.Source = &v
+}
+
 func (o V0038Error) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -122,6 +190,12 @@ func (o V0038Error) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ErrorNumber) {
 		toSerialize["error_number"] = o.ErrorNumber
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Source) {
+		toSerialize["source"] = o.Source
 	}
 	return toSerialize, nil
 }

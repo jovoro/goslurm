@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Error** | Pointer to **string** | error message | [optional] 
 **ErrorNumber** | Pointer to **int32** | Slurm internal error number | [optional] 
+**Description** | Pointer to **string** | error description | [optional] 
+**Source** | Pointer to **string** | error source | [optional] 
 
 ## Methods
 
@@ -75,6 +77,56 @@ SetErrorNumber sets ErrorNumber field to given value.
 `func (o *V0038Error) HasErrorNumber() bool`
 
 HasErrorNumber returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *V0038Error) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *V0038Error) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *V0038Error) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *V0038Error) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetSource
+
+`func (o *V0038Error) GetSource() string`
+
+GetSource returns the Source field if non-nil, zero value otherwise.
+
+### GetSourceOk
+
+`func (o *V0038Error) GetSourceOk() (*string, bool)`
+
+GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSource
+
+`func (o *V0038Error) SetSource(v string)`
+
+SetSource sets Source field to given value.
+
+### HasSource
+
+`func (o *V0038Error) HasSource() bool`
+
+HasSource returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
