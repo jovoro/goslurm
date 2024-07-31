@@ -1241,10 +1241,18 @@
         }
       },
       "v0.0.38_errors": {
-        "type": "array",
-        "description": "Slurm errors",
-        "items": {
-          "$ref": "#\/components\/schemas\/v0.0.38_error"
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#\/components\/schemas\/v0.0.38_meta"
+          },
+          "errors": {
+            "type": "array",
+            "description": "slurm errors",
+            "items": {
+              "$ref": "#\/components\/schemas\/v0.0.38_error"
+            }
+          }
         }
       },
       "v0.0.38_error": {
@@ -1257,6 +1265,14 @@
           "error_number": {
             "description": "Slurm internal error number",
             "type": "integer"
+          },
+          "description": {
+            "type": "string",
+            "description": "error description"
+          },
+          "source": {
+            "type": "string",
+            "description": "error source"
           }
         }
       },
