@@ -12,6 +12,8 @@ help:
 	@echo ""
 	@echo "  clean        delete every built executable under ./cmd/bin"
 
+.PHONY: v0038 clean
+
 # We could maybe use a template when adding different/new versions?
 # Also, note you can specify several `--additional-properties` flags instead
 # of concatenating options with commas.
@@ -22,8 +24,6 @@ v0038:
 
 example:
 	@echo "TODO..."
-
-.PHONY: clean
 
 clean:
 	@echo "TODO..."
