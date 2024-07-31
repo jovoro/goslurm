@@ -27,12 +27,12 @@ func Test_oapigen_SlurmAPIService(t *testing.T) {
 
 	envUser, ok := os.LookupEnv("SLURM_USER")
 	if !ok {
-		t.Fatalf("couldn't find user on SLURM_USER")
+		t.Fatalf("couldn't find user on the SLURM_USER environment variable... is it defined?")
 	}
 
 	envToken, ok := os.LookupEnv("SLURM_JWT")
 	if !ok {
-		t.Fatalf("couldn't find token on SLURM_JWT")
+		t.Fatalf("couldn't find token on the SLURM_JWT environment variable... is it defined?")
 	}
 
 	auth := context.WithValue(

@@ -35,6 +35,15 @@ parameters are passed through a [`context`][Go Context] as seen on the example u
 
 Configuring the token-based authentication and generating the tokens themselves is covered on [SLURM's documentation][SLURM JWT Doc].
 
+### Authentication for running the tests
+In order to avoid including the authentication information in the repository, the tests read both the token and username from the `SLURM_USER` and
+`SLURM_TOKEN` environment variables respectively. If any of them isn't defined the tests will fail with an informative message. As always, you
+can either define them for the entire shell session with `export SLURM_USER=foo` or you can just define them when invoking `go test` with:
+
+    $ SLURM_USER=foo SLURM_TOKEN=topSecret go test
+
+Remember the `go test` command should be invoked from the `v0038/test` directory!
+
 ## Generating the Client
 As we said before generating the client is a matter of invoking OpenAPI generator. You'd need to install it first, which is very well explained on their
 repository's [README.md][OpenAPI Generator]. Once that's done, you should be able to run the following from this directory (i.e. the one this `README.md`
