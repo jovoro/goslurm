@@ -12,10 +12,13 @@ help:
 	@echo ""
 	@echo "  clean        delete every built executable under ./cmd/bin"
 
+# We could maybe use a template when adding different/new versions?
+# Also, note you can specify several `--additional-properties` flags instead
+# of concatenating options with commas.
 v0038:
-	@openapi-generator generate -g go -o v0038-f -i api_ro.yaml \
-		--git-host github.com --git-user-id pcolladosoto --git-repo-id goslurm/v0038 \
-		--additional-properties=packageName=v0038,withGoMod=false
+	@openapi-generator generate -g go -o $@ -i ./specs/$@.yaml                    \
+		--git-host github.com --git-user-id pcolladosoto --git-repo-id goslurm/$@ \
+		--additional-properties=packageName=$@,withGoMod=false
 
 example:
 	@echo "TODO..."
