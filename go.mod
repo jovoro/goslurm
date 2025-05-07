@@ -1,4 +1,4 @@
-module github.com/pcolladosoto/goslurm
+module github.com/jovoro/goslurm
 
 go 1.21.5
 
