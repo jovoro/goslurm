@@ -27,7 +27,7 @@ v0041:
 		--git-host github.com --git-user-id pcolladosoto --git-repo-id goslurm/$@ \
 		--additional-properties=packageName=$@,withGoMod=false
 v0041-docker:
-	@docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
+	@docker run --rm -v "$${PWD}:/local" openapitools/openapi-generator-cli generate \
 		-i /local/specs/v0041.json -g go -o /local/v0041 \
 		--additional-properties=packageName=v0041,withGoMod=false
 
