@@ -12,7 +12,7 @@ help:
 	@echo ""
 	@echo "  clean        delete every built executable under ./cmd/bin"
 
-.PHONY: v0038 clean
+.PHONY: v0038 v0041 v0041-docker clean
 
 # We could maybe use a template when adding different/new versions?
 # Also, note you can specify several `--additional-properties` flags instead
@@ -21,6 +21,15 @@ v0038:
 	@openapi-generator generate -g go -o $@ -i ./specs/$@.yaml                    \
 		--git-host github.com --git-user-id pcolladosoto --git-repo-id goslurm/$@ \
 		--additional-properties=packageName=$@,withGoMod=false
+
+v0041:
+	@openapi-generator generate -g go -o $@ -i ./specs/$@.json                    \
+		--git-host github.com --git-user-id pcolladosoto --git-repo-id goslurm/$@ \
+		--additional-properties=packageName=$@,withGoMod=false
+v0041-docker:
+	@docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
+		-i /local/specs/v0041.json -g go -o /local/v0041 \
+		--additional-properties=packageName=v0041,withGoMod=false
 
 example:
 	@echo "TODO..."
