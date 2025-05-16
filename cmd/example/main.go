@@ -9,7 +9,7 @@ import (
 	"os"
 	"strings"
 
-	slurmClient "github.com/jovoro/goslurm/v0039"
+	slurmClient "github.com/jovoro/goslurm/v0041"
 )
 
 var (
